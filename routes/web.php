@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MansKalendarsController;
 use App\Http\Controllers\GarastavoklisController;
 use App\Http\Controllers\KalendarsController;
 use App\Http\Controllers\WelcomeController;
@@ -15,7 +15,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard'); //Kalendara skatam
+    Route::get('/MansKalendars', [MansKalendarsController::class, 'index'])->name('MansKalendars'); //Kalendara skatam
     Route::get('/Garastavoklis/pievienot',[GarastavoklisController::class, 'create'])->name('Garastavoklis.pievienot'); // Ieraksta pievienošanai
     Route::post('/Garastavoklis',[GarastavoklisController::class, 'store'])->name('Garastavoklis.Registrs'); //Apstrādā formu
     Route::get('/Garastavoklis/{garastavoklis}/Rediget',[GarastavoklisController::class, 'rediget'])->name('Garastavoklis.Rediget'); //Ieraksta rediģēšana

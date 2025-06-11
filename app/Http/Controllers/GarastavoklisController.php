@@ -36,7 +36,7 @@ class GarastavoklisController extends Controller {
             'user_id'=> $user->id,
             'kalendars_id' => $kalendars->id,
         ]);
-        return redirect()->route('dashboard')->with('success', 'Garastāvoklis pievienots!');
+        return redirect()->route('MansKalendars')->with('success', 'Garastāvoklis pievienots!');
     }
     public function rediget(\App\Models\Garastavoklis $garastavoklis){
         return view('Garastavoklis.Rediget', compact('garastavoklis'));
@@ -51,13 +51,13 @@ class GarastavoklisController extends Controller {
             'piezimes' => 'nullable|string',
         ]);
         $garastavoklis->update($validated);
-        return redirect()->route('dashboard')->with('success', 'Garastāvokļa ieraksts atjaunots!');
+        return redirect()->route('MansKalendars')->with('success', 'Garastāvokļa ieraksts atjaunots!');
     }
     public function dzest(\App\Models\Garastavoklis $garastavoklis){
         $garastavoklis->delete();
-        return redirect()->route('dashboard')->with('success', 'Garastāvokļa ieraksts veiksmīgi dzēsts.');
+        return redirect()->route('MansKalendars')->with('success', 'Garastāvokļa ieraksts veiksmīgi dzēsts.');
     }
-    public function dashboard()
+    public function MansKalendars()
     {
         $user = Auth::user();
         $kalendars = $user->kalendars()->first();
@@ -67,6 +67,6 @@ class GarastavoklisController extends Controller {
             $entries = Garastavoklis::where('user_id', $user->id)->where('kalendars_id', $kalendars->id)->get();
         }
 
-        return view('Dashboard', ['kalendars' => $kalendars, 'entries' => $entries,]);
+        return view('MansKalendars', ['kalendars' => $kalendars, 'entries' => $entries,]);
     }
 }

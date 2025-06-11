@@ -25,6 +25,7 @@ class KalendarsController extends Controller
                     'title' => $g->Gstavoklis,
                     'start' => $g->datums,
                     'description' => $g->iemesls,
+                    'color' => '#594a20',
                     'extendedProps' => [
                         'id' => $g->id,
                         'piezimes' => $g->piezimes,

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 
-class DashboardController extends Controller
+class MansKalendarsController extends Controller
 {
     public function index(){
         $user = Auth::user(); //Lietotaja dati
@@ -12,6 +12,6 @@ class DashboardController extends Controller
             ? $kalendars->garastavoklis()->orderByDesc('datums')->get()
             : collect();
 
-        return view('Dashboard', compact('kalendars', 'entries'));
+        return view('MansKalendars', compact('kalendars', 'entries'));
     }
 }

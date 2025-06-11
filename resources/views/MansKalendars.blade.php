@@ -114,7 +114,7 @@
         <div style="display: flex; gap: 10px;">
             <a href="{{ url('/') }}">Sākumlapa</a>
             @auth
-                <a href="{{url('/dashboard')}}">Mans kalendārs</a>
+                <a href="{{url('/MansKalendars')}}">Mans kalendārs</a>
             @else
                 <a href="{{route('register')}}">Mans kalendārs</a>
             @endauth
@@ -163,6 +163,7 @@
         var entries = Ieraksti.map(I => ({ //Masīvs ar vērtībām, kalendāra aizpildei
             title: `${I.Gstavoklis}`,
             start: I.datums,
+            color: '#594a20',
             extendedProps: {
                 id: I.id,
             }

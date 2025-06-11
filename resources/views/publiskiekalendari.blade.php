@@ -98,6 +98,24 @@
         .kalendars-outer {
             margin-bottom: 40px;
         }
+        #calendar {
+            padding: 20px;
+            box-shadow: 0px 5px 25px #f0ead8;
+        }
+        .fc .fc-toolbar-title { /* Kalendāra mēneša teksts */
+            margin-right: 130px;
+        }
+        .fc .fc-button { /* Kalendāra pogas */
+            background-color: #594a20;
+            transition: background-color 0.3s ease;
+            border: 0;
+        }
+        .fc .fc-button:hover {
+            background-color: #0b0904;
+        }
+        .fc .fc-daygrid-day.fc-day-today { /* Šodiendienas izcelšanas krāsa */
+             background: #f5f0e4;
+        }
     </style>
 </head>
 <body>
@@ -105,7 +123,7 @@
         <div style="display: flex; gap: 10px;">
             <a href="{{ url('/') }}">Sākumlapa</a>
             @auth
-                <a href="{{ url('/dashboard') }}">Mans kalendārs</a>
+                <a href="{{ url('/MansKalendars') }}">Mans kalendārs</a>
             @else
                 <a href="{{ route('register') }}">Mans kalendārs</a>
             @endauth

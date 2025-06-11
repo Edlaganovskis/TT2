@@ -95,7 +95,7 @@
     <nav>
         <div class="nav">
             <a href="{{ url('/') }}">Sākumlapa</a>
-            @auth<a href="{{url('/dashboard')}}">Mans kalendārs</a>
+            @auth<a href="{{url('/MansKalendars')}}">Mans kalendārs</a>
             @else<a href="{{route('register')}}">Mans kalendārs</a>@endauth
             <a href="{{url('/publiskiekalendari')}}">Publiskie kalendāri</a>
         </div>
@@ -152,7 +152,7 @@
                 <textarea name="piezimes"></textarea>
             </div>
             <div class="pogas">
-                <button type="button" onclick="window.location.href='{{ url('/dashboard') }}'" class="Atpakal">Atpakaļ</button>
+                <button type="button" onclick="window.location.href='{{ url('/MansKalendars') }}'" class="Atpakal">Atpakaļ</button>
                 <button type="submit" class="Saglabat">Saglabāt</button>
             </div>
         </form>
