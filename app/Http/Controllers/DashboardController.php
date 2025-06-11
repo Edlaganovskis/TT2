@@ -2,10 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Kalendars;
-use Illuminate\Database\Schema\Blueprint;
-
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GarastavoklisController;
 use App\Http\Controllers\KalendarsController;
+use App\Http\Controllers\WelcomeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/Garastavoklis/{garastavoklis}/dzest', [GarastavoklisController::class, 'dzest'])->name('Garastavoklis.dzest'); // Dzēst ierakstu
     Route::patch('/kalendars/{kalendars}/publisks', [KalendarsController::class, 'Publisks'])->name('kalendars.Publisks'); //Publisks/privāts kalendārs
     Route::delete('/kalendars/{kalendars}/dzest', [KalendarsController::class, 'destroy']); // kalendāra džešanai
+    Route::get('/', [WelcomeController::class, 'index']); // Pēdēja Garastāvokļa ieteikumam.
 });
 
 require __DIR__.'/auth.php';

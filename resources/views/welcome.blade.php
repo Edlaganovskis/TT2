@@ -107,6 +107,12 @@
             overflow: auto;
             min-height: 0;
         }
+        #ieteikums, #DienasIeteikums {
+            text-align: center;
+            padding-top: 150px;
+            font-size: 40px;
+            font-weight: bold:
+        }
     </style>
     <!-- https://fullcalendar.io/ -->
 </head>
@@ -144,9 +150,10 @@
         </div>
         <div class="right">
             <div class="right-top">
-                <h2 id=DienasIeteikums></h2>
+                <div id=DienasIeteikums></div>
             </div>
             <div class="right-bottom">
+                <div id="ieteikums"></div>
             </div>
         </div>
     </div> 
@@ -212,6 +219,18 @@
         "Pasmaidi pats sev spogulī. Tas izklausās muļķīgi, bet darbojas!",
         "Atceries: sliktas dienas ir īslaicīgas. Tu esi stiprāks, nekā domā."
     ];
+    var pedejaisGarastavoklis = @json($PedejaisGstavoklis);
+    var GIeteikumi = {
+        "Lieliski!": "Padalies ar savu labo garastāvokli!",
+        "Labi": "Turpini tādā pašā garā!",
+        "Normāli": "Pamēģini sevi iepriecināt ar ko jauku.",
+        "Slikti": "Atrodi brīdi atpūtai vai sarunai ar draugu.",
+        "Briesmīgi!": "Atceries: arī grūtas dienas pāriet. Parūpējies par sevi!"
+    };
+    var ieteikums = GIeteikumi[pedejaisGarastavoklis];
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('ieteikums').textContent = ieteikums;
+    });
     function RandomIeteikums() {                                     // Funkcija nejaušai masīva Ieteikumi elementa izvēlei
         return Ieteikumi[Math.floor(Math.random()*Ieteikumi.length)];
     }
