@@ -139,7 +139,7 @@
         <div id="calendar-buttons" style="display:none; margin-bottom: 16px;"></div>
         <div id="Kalendars"></div>
         <div id="KalendaraNav" style="display:none;"></div> <!-- Kalendāra pogai -->
-
+    </div>
     <script>
         kalendars = @json($kalendars);
         Ieraksti = @json($entries);

@@ -115,14 +115,15 @@
         
         <div>
             <label>Garastāvoklis</label>
-                <select name="Gstavoklis" required>
-                    <option value="">{{$garastavoklis->Gstavoklis}}</option>
-                    <option value="Lieliski!">Lieliski!</option>
-                    <option value="Labi">Labi</option>
-                    <option value="Normāli">Normāli</option>
-                    <option value="Slikti">Slikti</option>
-                    <option value="Briesmīgi!">Briesmīgi!</option>
-                </select>
+            <select name="Gstavoklis" required>
+                <option value="">{{$garastavoklis->Gstavoklis}}</option>
+                <option value="Lieliski!">Lieliski!</option>
+                <option value="Labi">Labi</option>
+                <option value="Normāli">Normāli</option>
+                <option value="Slikti">Slikti</option>
+                <option value="Briesmīgi!">Briesmīgi!</option>
+            </select>
+        </div>
         <div>
             <label>Sajūtas</label>
                 <select name="sajutas" id="sajutas-select" required>
